@@ -1,13 +1,15 @@
-# Frontend
+# CEE Saturday Frontend
 
-A static, no-build site (plain HTML/CSS/JS) — deploy this whole folder as-is.
+Static responsive frontend for the CEE Saturday API.
 
-`api-config.js` sets `window.CEE_API_URL`, which `quiz.js` uses to talk to the
-backend. After you deploy the backend on Render, update the URL inside
-`api-config.js` to your Render URL, e.g.:
+## Run
 
-```js
-window.CEE_API_URL = 'https://cee-saturday-api.onrender.com/api';
+Use a local static server (do not open the HTML files directly with `file://`):
+
+```bash
+python3 -m http.server 5500
 ```
 
-Then redeploy the frontend (push to Git — Vercel redeploys automatically).
+Then visit `http://localhost:5500`. Set the deployed backend URL in `api-config.js`, or replace the default URL there.
+
+The frontend includes working login/register/logout, profile editing, practice progress, dynamic tests/repeated questions, online-student count, an automatically synced MEC notice section, responsive navigation, and a dismissible sticky announcement banner.
